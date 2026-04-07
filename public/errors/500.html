@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>500 — Errore interno</title>
+  <style>
+    :root {
+      --bg:     #050e18;
+      --cyan:   #00d4ff;
+      --green:  #00ff9d;
+      --orange: #ff9d00;
+      --dim:    #2a5a70;
+      --text:   #8bbfcf;
+    }
+
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Courier New', monospace;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    #orbits { position: fixed; inset: 0; z-index: 0; }
+
+    .content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.2rem;
+    }
+
+    .badge {
+      font-size: .65rem;
+      letter-spacing: .25em;
+      color: var(--dim);
+    }
+
+    .error-code {
+      font-size: clamp(4rem, 15vw, 9rem);
+      font-weight: 400;
+      color: var(--orange);
+      letter-spacing: .1em;
+      text-shadow: 0 0 40px #ff9d0066;
+      animation: fadeIn 1s ease both, flicker 3s 1.5s infinite;
+      line-height: 1;
+    }
+
+    h1 {
+      font-size: clamp(1rem, 3vw, 1.6rem);
+      font-weight: 400;
+      color: var(--cyan);
+      letter-spacing: .15em;
+      text-shadow: 0 0 20px #00d4ff66;
+      animation: fadeIn 1s .2s ease both;
+    }
+
+    p {
+      font-size: .82rem;
+      color: var(--text);
+      opacity: .6;
+      letter-spacing: .06em;
+      animation: fadeIn 1s .4s ease both;
+    }
+
+    .btn {
+      margin-top: .4rem;
+      padding: .55rem 1.6rem;
+      border: 1px solid var(--cyan);
+      background: transparent;
+      color: var(--cyan);
+      font-family: 'Courier New', monospace;
+      font-size: .75rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background .3s, color .3s;
+      animation: fadeIn 1s .6s ease both;
+    }
+    .btn:hover { background: var(--cyan); color: var(--bg); }
+
+    .ping {
+      width: 14px; height: 14px;
+      border-radius: 50%;
+      background: var(--orange);
+      box-shadow: 0 0 0 0 #ff9d0088;
+      animation: ripple 1.8s ease-out infinite;
+    }
+    @keyframes ripple {
+      0%   { box-shadow: 0 0 0 0   #ff9d0088; }
+      70%  { box-shadow: 0 0 0 18px #ff9d0000; }
+      100% { box-shadow: 0 0 0 0   #ff9d0000; }
+    }
+
+    @keyframes fadeIn {
+      from { opacity:0; transform: translateY(16px); }
+      to   { opacity:1; transform: none; }
+    }
+
+    @keyframes flicker {
+      0%, 90%, 100% { opacity: 1; }
+      91%           { opacity: .3; }
+      92%           { opacity: 1; }
+      93%           { opacity: .5; }
+      94%           { opacity: 1; }
+    }
+
+    footer {
+      position: fixed;
+      bottom: 1.2rem;
+      font-size: .65rem;
+      letter-spacing: .15em;
+      color: var(--dim);
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+
+<canvas id="orbits"></canvas>
+
+<div class="content">
+  <div class="ping"></div>
+  <span class="badge">// ERRORE — INTERNAL SERVER ERROR</span>
+  <div class="error-code">500</div>
+  <h1>ERRORE INTERNO DEL SERVER</h1>
+  <p>Qualcosa è andato storto. Il server ha riscontrato un problema.</p>
+  <a href="/" class="btn">← Torna alla home</a>
+</div>
+
+<footer id="clock">--:--:--</footer>
+
+<script>
+  (function tick() {
+    document.getElementById('clock').textContent =
+      new Date().toTimeString().slice(0, 8);
+    setTimeout(tick, 1000);
+  })();
+
+  const canvas = document.getElementById('orbits');
+  const ctx    = canvas.getContext('2d');
+
+  function resize() {
+    canvas.width  = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  const rings = [
+    { r: 120, speed: 0.8, nodes: 3, color: '#ff9d00' },
+    { r: 200, speed: 0.5, nodes: 5, color: '#00d4ff' },
+    { r: 290, speed: 0.3, nodes: 7, color: '#ff9d00' },
+    { r: 390, speed: 0.2, nodes: 4, color: '#00d4ff' },
+  ];
+
+  function draw(ts) {
+    const t  = ts * 0.001;
+    const ox = canvas.width  / 2;
+    const oy = canvas.height / 2;
+
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    rings.forEach(ring => {
+      ctx.beginPath();
+      ctx.arc(ox, oy, ring.r, 0, Math.PI * 2);
+      ctx.strokeStyle = ring.color + '18';
+      ctx.lineWidth   = 1;
+      ctx.stroke();
+
+      for (let i = 0; i < ring.nodes; i++) {
+        const angle = t * ring.speed + (i / ring.nodes) * Math.PI * 2;
+        const nx = ox + Math.cos(angle) * ring.r;
+        const ny = oy + Math.sin(angle) * ring.r;
+
+        ctx.beginPath();
+        ctx.moveTo(ox, oy);
+        ctx.lineTo(nx, ny);
+        ctx.strokeStyle = ring.color + '14';
+        ctx.lineWidth   = 1;
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.arc(nx, ny, 3, 0, Math.PI * 2);
+        ctx.fillStyle   = ring.color;
+        ctx.shadowColor = ring.color;
+        ctx.shadowBlur  = 12;
+        ctx.fill();
+        ctx.shadowBlur  = 0;
+      }
+    });
+
+    const pulse = 0.5 + 0.5 * Math.sin(t * 2);
+    ctx.beginPath();
+    ctx.arc(ox, oy, 6 + pulse * 3, 0, Math.PI * 2);
+    ctx.fillStyle   = '#ff9d00';
+    ctx.shadowColor = '#ff9d00';
+    ctx.shadowBlur  = 20 + pulse * 20;
+    ctx.fill();
+    ctx.shadowBlur  = 0;
+
+    requestAnimationFrame(draw);
+  }
+
+  requestAnimationFrame(draw);
+</script>
+</body>
+</html>

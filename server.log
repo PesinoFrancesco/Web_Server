@@ -1,0 +1,77 @@
+INFO:root:[('127.0.0.1', 55685)] Connessione accettata. Connessioni attive: 2/5
+INFO:root:Richiesta ricevuta per ./public\index.html! Faccio finta di lavorare per 2 secondi...
+INFO:root:[('127.0.0.1', 62411)] Connessione accettata. Connessioni attive: 3/5
+INFO:root:[('127.0.0.1', 55685)] Chiuso. Attive: 2/5
+INFO:root:Richiesta ricevuta per ./public\index.html! Faccio finta di lavorare per 2 secondi...
+INFO:root:[('127.0.0.1', 62411)] Chiuso. Attive: 1/5
+INFO:root:[('127.0.0.1', 49434)] Connessione accettata. Connessioni attive: 2/5
+INFO:root:Richiesta ricevuta per ./public\index.html! Faccio finta di lavorare per 2 secondi...
+INFO:root:[('127.0.0.1', 49434)] Chiuso. Attive: 1/5
+INFO:root:[('127.0.0.1', 55337)] Connessione accettata. Connessioni attive: 2/5
+INFO:root:Richiesta ricevuta per ./public\index.html! Faccio finta di lavorare per 2 secondi...
+INFO:root:[('127.0.0.1', 55337)] Chiuso. Attive: 1/5
+INFO:root:[('127.0.0.1', 57799)] Connessione accettata. Connessioni attive: 2/5
+INFO:root:Configurazione ricaricata con successo!
+INFO:root:[('127.0.0.1', 57799)] Chiuso. Attive: 1/5
+INFO:root:[('127.0.0.1', 65225)] Connessione accettata. Connessioni attive: 2/5
+INFO:root:Richiesta ricevuta per ./public\index.html! Faccio finta di lavorare per 2 secondi...
+INFO:root:[('127.0.0.1', 59293)] Connessione accettata. Connessioni attive: 3/5
+INFO:root:[('127.0.0.1', 54317)] Connessione accettata. Connessioni attive: 4/5
+INFO:root:[('127.0.0.1', 65225)] Chiuso. Attive: 3/5
+INFO:root:Configurazione ricaricata con successo!
+INFO:root:[('127.0.0.1', 59293)] Chiuso. Attive: 2/5
+INFO:root:Richiesta ricevuta per ./public\index.html! Faccio finta di lavorare per 2 secondi...
+INFO:root:[('127.0.0.1', 59873)] Connessione accettata. Connessioni attive: 3/5
+INFO:root:[('127.0.0.1', 54317)] Chiuso. Attive: 2/5
+INFO:root:Richiesta ricevuta per ./public\index.html! Faccio finta di lavorare per 2 secondi...
+INFO:root:[('127.0.0.1', 49818)] Connessione accettata. Connessioni attive: 3/5
+INFO:root:Richiesta ricevuta per ./public\index.html! Faccio finta di lavorare per 2 secondi...
+INFO:root:[('127.0.0.1', 49898)] Connessione accettata. Connessioni attive: 4/5
+ERROR:root:ERRORE: [WinError 10053] Connessione interrotta dal software del computer host
+INFO:root:Richiesta ricevuta per ./public\index.html! Faccio finta di lavorare per 2 secondi...
+INFO:root:[('127.0.0.1', 52986)] Connessione accettata. Connessioni attive: 5/5
+INFO:root:Richiesta ricevuta per ./public\index.html! Faccio finta di lavorare per 2 secondi...
+WARNING:root:[('127.0.0.1', 63046)] Server pieno! Rifiuto la connessione.
+ERROR:root:ERRORE: [WinError 10053] Connessione interrotta dal software del computer host
+ERROR:root:ERRORE: [WinError 10053] Connessione interrotta dal software del computer host
+INFO:root:[('127.0.0.1', 52986)] Chiuso. Attive: 4/5
+INFO:root:[('127.0.0.1', 61121)] Connessione accettata. Connessioni attive: 5/5
+INFO:root:Richiesta ricevuta per ./public\index.html! Faccio finta di lavorare per 2 secondi...
+INFO:root:[('127.0.0.1', 61121)] Chiuso. Attive: 4/5
+INFO:root:[('127.0.0.1', 58921)] Connessione accettata. Connessioni attive: 5/5
+INFO:root:Richiesta ricevuta per ./public\index.html! Faccio finta di lavorare per 2 secondi...
+INFO:root:[('127.0.0.1', 58921)] Chiuso. Attive: 4/5
+INFO:root:[('127.0.0.1', 49941)] Connessione accettata. Connessioni attive: 5/5
+INFO:root:Configurazione ricaricata con successo!
+INFO:root:[('127.0.0.1', 49941)] Chiuso. Attive: 4/5
+INFO:root:[('127.0.0.1', 53785)] Connessione accettata. Connessioni attive: 5/5
+INFO:root:Richiesta ricevuta per ./public\index.html! Faccio finta di lavorare per 2 secondi...
+WARNING:root:[('127.0.0.1', 58726)] Server pieno! Rifiuto la connessione.
+INFO:root:[('127.0.0.1', 53785)] Chiuso. Attive: 4/5
+INFO:root:[('127.0.0.1', 62646)] Connessione accettata. Connessioni attive: 5/5
+INFO:root:Richiesta ricevuta per ./public\index.html! Faccio finta di lavorare per 2 secondi...
+WARNING:root:[('127.0.0.1', 57854)] Server pieno! Rifiuto la connessione.
+INFO:root:[('127.0.0.1', 62646)] Chiuso. Attive: 4/5
+INFO:root:[('127.0.0.1', 60747)] Connessione accettata. Connessioni attive: 5/5
+INFO:root:Richiesta ricevuta per ./public\index.html! Faccio finta di lavorare per 2 secondi...
+INFO:root:[('127.0.0.1', 60747)] Chiuso. Attive: 4/5
+INFO:root:[('127.0.0.1', 58770)] Connessione accettata. Connessioni attive: 5/5
+INFO:root:Richiesta ricevuta per ./public\index.html! Faccio finta di lavorare per 2 secondi...
+WARNING:root:[('127.0.0.1', 64041)] Server pieno! Rifiuto la connessione.
+WARNING:root:[('127.0.0.1', 64172)] Server pieno! Rifiuto la connessione.
+INFO:root:[('127.0.0.1', 58770)] Chiuso. Attive: 4/5
+INFO:root:[('127.0.0.1', 60978)] Connessione accettata. Connessioni attive: 5/5
+INFO:root:Configurazione ricaricata con successo!
+INFO:root:[('127.0.0.1', 60978)] Chiuso. Attive: 4/5
+INFO:root:[('127.0.0.1', 57871)] Connessione accettata. Connessioni attive: 5/5
+INFO:root:Richiesta ricevuta per ./public\index.html! Faccio finta di lavorare per 2 secondi...
+WARNING:root:[('127.0.0.1', 53998)] Server pieno! Rifiuto la connessione.
+INFO:root:[('127.0.0.1', 57871)] Chiuso. Attive: 4/5
+INFO:root:[('127.0.0.1', 58933)] Connessione accettata. Connessioni attive: 5/5
+WARNING:root:[('127.0.0.1', 51414)] Server pieno! Rifiuto la connessione.
+INFO:root:Configurazione ricaricata con successo!
+INFO:root:[('127.0.0.1', 58933)] Chiuso. Attive: 4/5
+INFO:root:[('127.0.0.1', 51873)] Connessione accettata. Connessioni attive: 5/5
+INFO:root:Richiesta ricevuta per ./public\index.html! Faccio finta di lavorare per 2 secondi...
+WARNING:root:[('127.0.0.1', 61638)] Server pieno! Rifiuto la connessione.
+INFO:root:[('127.0.0.1', 51873)] Chiuso. Attive: 4/5
